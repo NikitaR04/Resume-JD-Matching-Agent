@@ -63,14 +63,29 @@ Job Description -----------/
 
 ## 📊 Results
 
-The model achieved high performance on the validation dataset.
+The model was trained on ~99,615 resume–JD pairs and evaluated on a held-out, class-balanced test set of 39,846 pairs (19,923 Matched / 19,923 Unmatched).
+
+Test Set Performance
+Metric	Score
+Accuracy	96.63%
+Precision	96.91%
+Recall	96.34%
+F1 Score	96.62%
+Classification Report
+Class	Precision	Recall	F1-Score	Support
+Unmatched	0.96	0.97	0.97	19,923
+Matched	0.97	0.96	0.97	19,923
+Training Details
+Trained for 9 epochs with early stopping and model checkpointing on validation accuracy
+Best model restored from epoch 6 (val_accuracy: 96.57%); final test metrics computed after restoring best weights
+Training accuracy reached ~99.2% by the final epoch vs. ~96.7% validation accuracy — a mild train-validation gap indicating slight overfitting, mitigated by early stopping and checkpoint restoration rather than allowed to compound over more epochs
 
 Evaluation includes:
 
-- Training & Validation Accuracy
-- Training & Validation Loss
-- Confusion Matrix
-- Resume Match Prediction
+Training & Validation Accuracy
+Training & Validation Loss
+Confusion Matrix
+Resume Match Prediction
 
 ---
 
